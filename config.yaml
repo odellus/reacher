@@ -9,7 +9,7 @@ Environment:
   Success: 30.0          # score success cutoff
   # Location of ml-agents python directory.
   Unity_pythonpath: /home/thomas/downloads/ml-agents-0.4.0b/python
-  Random_seed: 19
+  Random_seed: 19        # random seed passed to all RNGs involved in code.
 
 # Parameters for the DQN Agent
 Agent:
@@ -22,9 +22,7 @@ Agent:
   Weight_decay: 0.0       # L2 weight decay for regularization
   Brain_index: 0          # index of agent in environment
   Noise_decay: 1.0       # How much to decay noise modulation during each step.
-  Update_every: 20
-  Learning_steps: 1
-  Norm_rewards: True
+  Update_every: 20       # How many agent.step()s to take before doing a learning step.
 
 # Hyperparameters used during optimization
 Training:
@@ -40,7 +38,8 @@ Model:
   fc2_size_critic:  300    # Dimensionality of second fully connected critic layer
   weight_init_lim:   0.003 # Absolute value of initial weights of output layers
 
+# Hyperparameters which define the noise process
 Noise:
-  Mu:    0.0
-  Theta: 0.15
-  Sigma: 0.2
+  Mu:    0.0            # Mean value of the noise process.
+  Theta: 0.15           # weight given to (mu - x) in computation of dx
+  Sigma: 0.2            # weight given to uniform random number in [0,1)

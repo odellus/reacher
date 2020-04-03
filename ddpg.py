@@ -130,5 +130,5 @@ def ddpg(
     return scores
 
 if __name__ == "__main__":
-    agent = load_pretrained(agent)
+    # agent = load_pretrained(agent)
     scores = ddpg()
