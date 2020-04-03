@@ -1,0 +1,46 @@
+# Filename: config.yaml
+# Description: Contains configuration variables for navigation project
+# Author: Thomas Wood (odell.wood@gmail.com)
+
+# Parameters for the Unity Environment
+Environment:
+  # location of executable
+  Filepath: ./Reacher_Linux_NoVis/Reacher.x86_64
+  Success: 30.0          # score success cutoff
+  # Location of ml-agents python directory.
+  Unity_pythonpath: /home/thomas/downloads/ml-agents-0.4.0b/python
+  Random_seed: 19
+
+# Parameters for the DQN Agent
+Agent:
+  Buffer_size: 100000    # replay buffer size
+  Batch_size: 128         # minibatch size
+  Gamma: 0.99             # discount factor
+  Tau: 0.001              # for soft update of target parameters
+  Lr_actor: 0.0001        # learning rate for actor
+  Lr_critic: 0.001        # learning rate for critic
+  Weight_decay: 0.0       # L2 weight decay for regularization
+  Brain_index: 0          # index of agent in environment
+  Noise_decay: 1.0       # How much to decay noise modulation during each step.
+  Update_every: 20
+  Learning_steps: 1
+  Norm_rewards: True
+
+# Hyperparameters used during optimization
+Training:
+  Number_episodes: 10000  # Number of episodes
+  Max_timesteps: 3000    # Maximum number of timesteps per episode
+  Score_window: 100       # Length of averaging window for agent rewards
+
+# Hyperparameters used to define the network architecture
+Model:
+  fc1_size_actor:   400    # Dimensionality of first fully connected actor layer
+  fc2_size_actor:   300    # Dimensionality of second fully connected actor layer
+  fcs1_size_critic: 400    # Dimensionality of first fully connected critic layer
+  fc2_size_critic:  300    # Dimensionality of second fully connected critic layer
+  weight_init_lim:   0.003 # Absolute value of initial weights of output layers
+
+Noise:
+  Mu:    0.0
+  Theta: 0.15
+  Sigma: 0.2
