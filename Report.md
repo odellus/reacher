@@ -4,7 +4,7 @@
 ### Learning Algorithm
 
 <!-- The report clearly describes the learning algorithm, along with the chosen hyperparameters. It also describes the model architectures for any neural networks. -->
-To solve the reacher environment we adapted Deep Deterministic Policy Gradient<sup>1</sup> from the Udacity deep-reinforcement-learning repository<sup>2</sup> on GitHub. The core of the learning algorithm updates accoring to the following:
+To solve the reacher environment we adapted Deep Deterministic Policy Gradient<sup>1</sup> from the Udacity deep-reinforcement-learning repository<sup>2</sup> on GitHub. The core of the learning algorithm updates according to the following:
 ```python
 # Get (s,a,r,s') tuples from the replay buffer.
 states, actions, rewards, next_states, dones = experiences
@@ -132,7 +132,7 @@ The architecture of the critic network which maps state and action vectors onto 
 ### Plot of Rewards
 
 <!-- A plot of rewards per episode is included to illustrate that the agent is able to receive an average reward (over 100 episodes) of at least +30. The submission reports the number of episodes needed to solve the environment. -->
-After many trials we were finally able to get our agent to learn to solve the reacher environment. To accelerate our final push for an average score of +30 over 100 episodes, we used the weights of an earlier network that reached a respectable score before the training diverged to give our agent a boost towards successfully solving the environment.
+After many trials we were finally able to get our agent to learn to solve the reacher environment. To accelerate our final push for an average score of +30 over 100 episodes, we used the weights of an earlier network that reached a respectable score before the training diverged to give our agent a boost towards successfully solving the environment. The agent took 3900 episodes to learn to solve the environment.
 
 ![scores](./averaged_learning_curve.png)
 
